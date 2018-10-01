@@ -1,0 +1,6 @@
+#!/bin/bash
+DIR="$(cd "$(dirname "$0")" && pwd)"
+JAVA_HOME="$(cd "$DIR" && pwd)"
+echo -e "export JAVA_HOME=${JAVA_HOME}">>/etc/profile
+echo -e 'export JRE_HOME=${JAVA_HOME}/jre\nexport CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib\nexport PATH=${JAVA_HOME}/bin:$PATH'>>/etc/profile
+source /etc/profile
